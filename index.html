@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quize.net</title>
+    <link rel="stylesheet" href="style.css">
+    <div class="header">
+      <h2>Feedback request</h2>
+    </div>  
+      <div class="linkContainer"></div>
+    </div>
+    
+</head>
+  <body>
+    <div class="container">
+      <div class="mainContent"></div>
+    <img src="./icons/icon.png" height="64" width="64">
+            <label><h4>Your opinion matters</h4></label>   
+            <div class="label">
+              <label>Have some ideas how to improve our project?<strong> Give us your feedback.</strong></label>
+            </div>
+            <div class="divider"></div>
+            <div class="h">
+              <label><h3>Your rating:</h3></label>
+            </div>
+        <form id="form">
+        <div class='radioList'>
+        <div class="radioContainer">
+            <input class="radioInput" type="radio" name="exampleForm" id="radio2Example1" label="Very good"></input>
+            <label class="radioLabel" for="radio2Example1">
+              Very good
+            </label>
+          </div>
+          <div class="radioContainer">
+            <input class="radioInput" type="radio" name="exampleForm" id="radio2Example1"></input>
+            <label class="radioLabel" for="radio2Example1">
+              Good
+            </label>
+          </div>
+          <div class="radioContainer">
+            <input class="radioInput" type="radio" name="exampleForm" id="radio2Example1"></input>
+            <label class="radioLabel" for="radio2Example1">
+              Medicore
+            </label>
+          </div>
+          <div class="radioContainer">
+            <input class="radioInput" type="radio" name="exampleForm" id="radio2Example1"></input>
+            <label class="radioLabel" for="radio2Example1">
+              Bad
+            </label>
+          </div>
+          <div class="radioContainer">
+            <input class="radioInput" type="radio" name="exampleForm" id="radio2Example1">
+            <label class="radioLabel" for="radio2Example1">
+              Very bad
+            </label>
+          </div>
+          </form>
+    </div>
+    <div class="h3">
+      <label><h3>What could we improve?</h3></label>
+    </div>
+    <div class="Form">
+      <form id="form2">
+        
+        <textarea placeholder="Your feedback" id="textarea"></textarea>
+      </form>
+      <div class="button">
+        <button class="button-blue">Submit</button>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <script>
+      const form=document.querySelector("#form2")
+    const button=document.querySelector(".button-blue")
+    button.addEventListener("click",()=>{
+      //call()
+      const  formtext=form[0].value 
+      console.log(formtext)
+      postData('https://jsonplaceholder.typicode.com/',{text:formtext})
+      .then((data) => {
+  console.log(data); // JSON data parsed by response.json() call
+});
+    })
+    
+    async function postData(url = "", data = {}) {
+  // Default options are marked with *
+  const response = await fetch(url, {
+    method: "POST", // *GET, POST, PUT, DELETE, etc.
+    mode: "cors", // no-cors, *cors, same-origin
+    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: "same-origin", // include, *same-origin, omit
+    headers: {
+      "Content-Type": "application/json",
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: "follow", // manual, *follow, error
+    referrerPolicy: "no-referrer", // no-referrer, *client
+    body: JSON.stringify(data), // body data type must match "Content-Type" header
+  });
+  return await response.json(); // parses JSON response into native JavaScript objects
+}
+
+    </script>    
+  </body>
+</html>

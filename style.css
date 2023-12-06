@@ -1,0 +1,120 @@
+
+
+/*font*/
+
+.title1{
+    font-size: 48px;
+    
+
+}
+
+.title2{
+    font-size: 36px;
+
+
+}
+
+.text{
+    font-size: 13px;
+
+
+}
+
+/*components*/
+.link{
+    text-decoration:none;
+    color: blue;
+}
+
+.link:hover{
+    color:gray;
+}
+
+
+body{
+    margin: 0px;
+}
+
+
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-left: 40px;
+    background-color:rgb(12, 94, 208);
+    color: white;
+    width: 100%;
+}
+
+.linkContainer{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    width:100%;
+
+}
+
+.mainContent {
+    display: flex;
+    justify-content: center;
+
+}
+
+.container {
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    height: 100vh;
+    padding-left: 124px;
+    padding-right: 124px;
+    
+}
+
+.divider {
+    border-bottom: 1px solid gray;
+    width: 100%
+
+}
+
+.radioList{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.radioContainer{
+    display: flex;
+    padding-right: 340px;
+}
+
+.label{
+    padding-bottom: 20px;
+}
+
+.h3{
+    padding-top: 10px;
+}
+
+.Form{
+    
+    text-align: center;
+}
+
+.button{
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    user-select: none;
+    padding-left: 435px;
+    width: 100px;
+    height: 100px;
+
+}
+
+.button-blue{
+    color: white;
+    background-color: rgb(12, 94, 208);
+    border: 1px solid rgb(12, 94, 208);
+}
